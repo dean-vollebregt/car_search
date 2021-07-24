@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/document-manager.css">
+
+    <!--fetch-->
+    <script src="javascript/api.js"></script>
+
+    <title>Car Search</title>
+</head>
+
+<body>
+
+
+<header class="navigation-allowed">
+    <!--Content Dynamically Loaded-->
+</header>
+
+<div id="main" style="min-height: 100vh">
+    <div id="loadingDiv"><h1>Loading .....</h1></div>
+    <div id="manageS3ContentPanel" class="container d-none">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12">
+                <h2>Car Search</h2>
+                <form novalidate onsubmit="return false">
+                    <div style="width:77%; float:left">
+                        <div style="width:99%">
+                            <input type="text" class="form-control" id="carName" maxlength="50" placeholder="Enter car name">
+                        </div>
+                    </div>
+
+                    <div style="width:11%; float:left">
+                        <button type="button" class="btn btn-default navbar-btn" onclick="validateSearchAndRender(true)">Exact Match</button>
+                    </div>
+
+                    <div style="width:10%; float:left">
+                        <button type="button" class="btn btn-default navbar-btn" onclick="validateSearchAndRender(false)">Similar Match</button>
+                    </div>
+
+                </form>
+                <div style="padding-top: 50px">
+
+                </div>
+                <div id="tableOverflow" class="d-none">
+                    <table id="data" class="table table-bordered adminTable" style="overflow-y: auto">
+                        <thead class="table-active">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Miles/Gallon</th>
+                            <th scope="col">Cylinders</th>
+                            <th scope="col">Displacement</th>
+                            <th scope="col">Horsepower</th>
+                            <th scope="col">Weight (lbs)</th>
+                            <th scope="col">Acceleration</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Origin</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <!--Content Dynamically Loaded-->
+</footer>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="javascript/jquery-3.2.1.js"></script>
+<script src="javascript/bootstrapPopper.js"></script>
+<script src="javascript/bootstrap.js"></script>
+
+<!--Index javascript methods -->
+<script type="text/javascript" src="javascript/car-search.js"></script>
+<script type="text/javascript" src="javascript/car-search-service.js"></script>
+</body>
+</html>
